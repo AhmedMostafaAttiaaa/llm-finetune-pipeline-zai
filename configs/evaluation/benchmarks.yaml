@@ -1,0 +1,98 @@
+# Evaluation Benchmark Configuration
+benchmarks:
+  mmlu:
+    enabled: true
+    name: "Massive Multitask Language Understanding"
+    description: "Tests general knowledge across 57 subjects including finance"
+    tasks: ["mmlu"]  # Includes finance subset
+    num_fewshot: 5
+    batch_size: 8
+    metric: "acc_norm"
+    
+  gsm8k:
+    enabled: true
+    name: "Grade School Math 8K"
+    description: "Mathematical reasoning benchmark - critical for fintech calculations"
+    tasks: ["gsm8k"]
+    num_fewshot: 8
+    batch_size: 8
+    metric: "acc"
+    
+  humaneval:
+    enabled: true
+    name: "HumanEval"
+    description: "Code generation benchmark - critical for coding tasks"
+    tasks: ["humaneval"]
+    num_fewshot: 0
+    batch_size: 8
+    metric: "pass@1"
+    
+  mbpp:
+    enabled: true
+    name: "Mostly Basic Python Programming"
+    description: "Python coding benchmark - supplementary to HumanEval"
+    tasks: ["mbpp"]
+    num_fewshot: 3
+    batch_size: 8
+    metric: "pass@1"
+
+  mt_bench:
+    enabled: true
+    name: "MT-Bench"
+    description: "Multi-turn conversation benchmark with GPT-as-judge scoring"
+    tasks: ["mt_bench"]
+    num_fewshot: 0
+    batch_size: 1
+    metric: "score"
+    judge_model: "gpt-4"  # or local judge
+
+  finqa:
+    enabled: true
+    name: "FinQA"
+    description: "Financial question answering with numerical reasoning"
+    tasks: ["finqa"]
+    num_fewshot: 0
+    batch_size: 8
+    metric: "acc"
+    dataset: "ytham/finqa"
+
+  convfinqa:
+    enabled: true
+    name: "ConvFinQA"  
+    description: "Conversational financial reasoning - multi-turn finance questions"
+    tasks: ["convfinqa"]
+    num_fewshot: 0
+    batch_size: 8
+    metric: "acc"
+
+# Perplexity evaluation
+perplexity:
+  enabled: true
+  datasets:
+    - "wikitext-2-raw-v1"
+    - "ptb-text-only"
+  batch_size: 8
+
+# GPT-as-Judge configuration  
+gpt_judge:
+  enabled: true
+  judge_model: "gpt-4o-mini"  # Cost-effective judge
+  criteria:
+    - "relevance"
+    - "accuracy" 
+    - "completeness"
+    - "reasoning_quality"
+    - "code_correctness"
+  num_samples: 50  # Number of samples to judge
+
+# Custom fintech evaluation
+fintech_eval:
+  enabled: true
+  custom_prompts_file: "configs/evaluation/fintech_prompts.json"
+  categories:
+    - "regulatory_compliance"
+    - "risk_assessment"
+    - "financial_analysis"
+    - "algorithmic_trading"
+    - "fraud_detection"
+    - "portfolio_optimization"

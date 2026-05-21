@@ -1,0 +1,42 @@
+# Phi-2 (2.7B) - Microsoft Research
+# Strong reasoning model for its size, good at math and logic
+model:
+  name: "microsoft/phi-2"
+  short_name: "phi-2"
+  size_billions: 2.7
+  family: "phi"
+  type: "base"
+  context_length: 2048
+  trust_remote_code: true
+
+vram:
+  base_model_fp16: "~5.5 GB"
+  qlora_4bit_inference: "~2.5 GB"
+  qlora_4bit_training: "~8-10 GB"
+  lora_fp16_training: "~14-16 GB"
+
+recommended:
+  for_coding: true
+  for_fintech: true
+  for_reasoning: true
+  notes: "Excellent reasoning capabilities for size. Strong at math/logic. Limited context window (2048). Base model - needs instruction tuning first."
+
+chat_template: "phi"
+
+lora:
+  target_modules: ["q_proj", "k_proj", "v_proj", "dense", "fc1", "fc2"]
+  rank: 64
+  alpha: 128
+  dropout: 0.05
+
+training:
+  max_seq_length: 2048
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  num_train_epochs: 3
+  warmup_ratio: 0.1
+  lr_scheduler_type: "cosine"
+  optim: "adamw_8bit"
+  weight_decay: 0.01
+  max_grad_norm: 1.0

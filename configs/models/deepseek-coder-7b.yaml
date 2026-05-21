@@ -1,0 +1,42 @@
+# DeepSeek-Coder-V2-Lite-Instruct (7B MoE)
+# DeepSeek's coding specialist with Mixture of Experts
+model:
+  name: "deepseek-ai/DeepSeek-Coder-V2-Lite-Instruct"
+  short_name: "deepseek-coder-7b"
+  size_billions: 7
+  family: "deepseek"
+  type: "instruct"
+  context_length: 131072
+  trust_remote_code: true
+
+vram:
+  base_model_fp16: "~14 GB"
+  qlora_4bit_inference: "~5 GB"
+  qlora_4bit_training: "~16-18 GB"
+  lora_fp16_training: "~28-30 GB"
+
+recommended:
+  for_coding: true
+  for_fintech: true
+  for_reasoning: true
+  notes: "MoE architecture - active params ~2.4B but with 16B total. Excellent code performance. Great for coding + fintech due to strong analytical reasoning. Longer sequences can be handled efficiently."
+
+chat_template: "deepseek"
+
+lora:
+  target_modules: ["q_proj", "kv_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  rank: 64
+  alpha: 128
+  dropout: 0.05
+
+training:
+  max_seq_length: 4096
+  per_device_train_batch_size: 2
+  gradient_accumulation_steps: 8
+  learning_rate: 2.0e-4
+  num_train_epochs: 3
+  warmup_ratio: 0.1
+  lr_scheduler_type: "cosine"
+  optim: "adamw_8bit"
+  weight_decay: 0.01
+  max_grad_norm: 1.0

@@ -1,0 +1,38 @@
+{
+  "regulatory_compliance": [
+    "Explain the key requirements of PSD2 for payment service providers in the EU. What are the Strong Customer Authentication (SCA) requirements?",
+    "What are the main compliance requirements of SOX Section 404 for fintech companies? How does it differ from GDPR compliance?",
+    "Describe the Anti-Money Laundering (AML) KYC requirements for a digital bank. What red flags should be monitored?",
+    "Explain the key provisions of the Dodd-Frank Act that affect fintech companies. How do they impact peer-to-peer lending platforms?"
+  ],
+  "risk_assessment": [
+    "Describe a comprehensive credit risk assessment framework for a peer-to-peer lending platform. Include both traditional and alternative data sources.",
+    "How would you implement a real-time fraud detection system for online payments? Describe the ML pipeline architecture.",
+    "Design a market risk assessment model for a cryptocurrency exchange. What VaR methodology would you use?",
+    "Explain the key components of an operational risk management framework for a digital payment processor."
+  ],
+  "financial_analysis": [
+    "Calculate the Sharpe ratio for a portfolio with 12% return, 3% risk-free rate, and 8% standard deviation. Show your work step by step.",
+    "Explain how to perform a discounted cash flow (DCF) valuation for a Series A fintech startup with projected revenues of $5M, $15M, and $40M over the next 3 years.",
+    "A fintech company has current assets of $50M and current liabilities of $30M. Calculate the current ratio and quick ratio, and interpret the results.",
+    "Compute the weighted average cost of capital (WACC) for a fintech firm with 60% equity (cost 12%), 40% debt (cost 6%), and 25% tax rate."
+  ],
+  "algorithmic_trading": [
+    "Write a Python function implementing a simple moving average crossover trading strategy with proper risk management (stop-loss and take-profit).",
+    "Implement a mean reversion trading strategy using Bollinger Bands in Python. Include entry/exit signals and position sizing.",
+    "Write Python code to backtest a momentum trading strategy on historical stock data using pandas and numpy.",
+    "Create a Python implementation of the VWAP (Volume Weighted Average Price) execution algorithm for institutional order management."
+  ],
+  "fraud_detection": [
+    "Design a feature engineering pipeline for credit card fraud detection using transaction data. What features would you engineer from raw transaction logs?",
+    "Write Python code to implement an anomaly detection system for financial transactions using isolation forests. Include data preprocessing and model evaluation.",
+    "Describe a real-time fraud scoring system architecture. How would you handle the latency-accuracy tradeoff?",
+    "Implement a graph-based fraud detection approach in Python that identifies collusion rings in transaction networks."
+  ],
+  "portfolio_optimization": [
+    "Implement Markowitz portfolio optimization in Python using scipy.optimize. Include constraints for minimum weight, maximum weight, and target return.",
+    "Explain the Capital Asset Pricing Model (CAPM) and write Python code to calculate expected returns, beta, and alpha for a stock relative to a market index.",
+    "Write a Python function that performs risk parity portfolio allocation. Compare it with equal-weight and minimum-variance portfolios.",
+    "Implement a Black-Litterman model for portfolio allocation in Python. Explain how to incorporate investor views with market equilibrium."
+  ]
+}

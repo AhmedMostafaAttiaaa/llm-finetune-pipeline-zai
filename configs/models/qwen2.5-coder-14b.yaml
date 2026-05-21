@@ -1,0 +1,42 @@
+# Qwen2.5-Coder-14B-Instruct
+# Large coding specialist - requires QLoRA 4-bit for 30GB VRAM
+model:
+  name: "Qwen/Qwen2.5-Coder-14B-Instruct"
+  short_name: "qwen2.5-coder-14b"
+  size_billions: 14
+  family: "qwen2"
+  type: "instruct"
+  context_length: 131072
+  trust_remote_code: false
+
+vram:
+  base_model_fp16: "~28 GB"
+  qlora_4bit_inference: "~9 GB"
+  qlora_4bit_training: "~24-28 GB"  # TIGHT on 30GB - reduce batch size!
+  lora_fp16_training: "DOES NOT FIT"  # Will OOM on 30GB
+
+recommended:
+  for_coding: true
+  for_fintech: true
+  for_reasoning: true
+  notes: "Most powerful coding model in the lineup. QLoRA 4-bit ONLY for 30GB VRAM. Reduce batch_size to 1, increase gradient_accumulation. Best code quality but slowest training. Monitor VRAM carefully!"
+
+chat_template: "chatml"
+
+lora:
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  rank: 32  # Reduced rank for VRAM savings
+  alpha: 64
+  dropout: 0.05
+
+training:
+  max_seq_length: 2048  # Reduced for VRAM
+  per_device_train_batch_size: 1
+  gradient_accumulation_steps: 16
+  learning_rate: 1.0e-4
+  num_train_epochs: 3
+  warmup_ratio: 0.1
+  lr_scheduler_type: "cosine"
+  optim: "adamw_8bit"
+  weight_decay: 0.01
+  max_grad_norm: 1.0

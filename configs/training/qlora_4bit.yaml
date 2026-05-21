@@ -1,0 +1,33 @@
+# QLoRA 4-bit Training Configuration
+# Default configuration for 30GB VRAM constraint
+quantization:
+  load_in_4bit: true
+  bnb_4bit_quant_type: "nf4"
+  bnb_4bit_compute_dtype: "bfloat16"
+  bnb_4bit_use_double_quant: true
+
+# Unsloth optimizations
+unsloth:
+  enabled: true
+  fast_inference: true
+  optimize_for_gpu: true
+
+# Gradient & Memory optimizations
+memory:
+  gradient_checkpointing: true
+  gradient_checkpointing_kwargs:
+    use_reentrant: false
+  fp16: false
+  bf16: true
+  torch_compile: false  # Can cause issues with some models
+  
+# Logging
+logging:
+  logging_steps: 10
+  save_strategy: "steps"
+  save_steps: 100
+  save_total_limit: 3
+  evaluation_strategy: "steps"
+  eval_steps: 100
+  report_to: "tensorboard"
+  output_dir: "./outputs"

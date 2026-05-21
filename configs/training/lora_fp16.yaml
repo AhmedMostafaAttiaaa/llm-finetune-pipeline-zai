@@ -1,0 +1,30 @@
+# LoRA FP16 Training Configuration  
+# For models small enough to fit in FP16 on 30GB VRAM (1-3B models only)
+quantization:
+  load_in_4bit: false
+  bnb_4bit_quant_type: null
+  bnb_4bit_compute_dtype: null
+  bnb_4bit_use_double_quant: false
+
+unsloth:
+  enabled: true
+  fast_inference: true
+  optimize_for_gpu: true
+
+memory:
+  gradient_checkpointing: true
+  gradient_checkpointing_kwargs:
+    use_reentrant: false
+  fp16: true
+  bf16: false
+  torch_compile: false
+
+logging:
+  logging_steps: 10
+  save_strategy: "steps"
+  save_steps: 100
+  save_total_limit: 3
+  evaluation_strategy: "steps"
+  eval_steps: 100
+  report_to: "tensorboard"
+  output_dir: "./outputs"

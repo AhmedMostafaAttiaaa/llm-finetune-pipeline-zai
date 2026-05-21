@@ -1,0 +1,47 @@
+# Qwen2.5-Coder-1.5B-Instruct
+# Best small coding model - excellent code generation & understanding
+model:
+  name: "Qwen/Qwen2.5-Coder-1.5B-Instruct"
+  short_name: "qwen2.5-coder-1.5b"
+  size_billions: 1.5
+  family: "qwen2"
+  type: "instruct"
+  context_length: 32768
+  trust_remote_code: false
+
+# VRAM Estimates (Single GPU)
+vram:
+  base_model_fp16: "~3 GB"
+  qlora_4bit_inference: "~1.5 GB"
+  qlora_4bit_training: "~6-8 GB"
+  lora_fp16_training: "~10-12 GB"
+
+# Recommended for this model
+recommended:
+  for_coding: true
+  for_fintech: true
+  for_reasoning: true
+  notes: "Best-in-class 1.5B coding model. Excellent for code generation, completion, and explanation. Strong reasoning for its size."
+
+# Chat template
+chat_template: "chatml"  # Qwen uses ChatML format
+
+# LoRA target modules
+lora:
+  target_modules: ["q_proj", "k_proj", "v_proj", "o_proj", "gate_proj", "up_proj", "down_proj"]
+  rank: 64
+  alpha: 128
+  dropout: 0.05
+
+# Training hyperparameters
+training:
+  max_seq_length: 4096
+  per_device_train_batch_size: 4
+  gradient_accumulation_steps: 4
+  learning_rate: 2.0e-4
+  num_train_epochs: 3
+  warmup_ratio: 0.1
+  lr_scheduler_type: "cosine"
+  optim: "adamw_8bit"
+  weight_decay: 0.01
+  max_grad_norm: 1.0
