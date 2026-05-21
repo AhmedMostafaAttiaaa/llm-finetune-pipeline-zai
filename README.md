@@ -1,4 +1,4 @@
-# 🚀 LLM Fine-Tuning Pipeline
+#  LLM Fine-Tuning Pipeline
 
 **Fine-tune and evaluate open-source LLMs for Coding & Fintech — with Reasoning & Thinking support**
 
@@ -9,7 +9,7 @@
 
 ---
 
-## 🎯 What This Pipeline Does
+##  What This Pipeline Does
 
 This is a **complete, end-to-end pipeline** for fine-tuning and evaluating open-source Large Language Models (LLMs) from Hugging Face, specifically designed for:
 
@@ -21,23 +21,23 @@ Plus an **embedding model pipeline** for RAG and semantic search in the fintech 
 
 ### Key Features
 
-- ✅ **8 candidate models** pre-configured (1.5B → 14B) — pick what fits your GPU
-- ✅ **QLoRA/LoRA + Unsloth** — 2x faster training, fits 30GB VRAM
-- ✅ **Reasoning fine-tuning** — `<think/>` tags, CoT scaffolding, self-reflection prompts
-- ✅ **7 benchmarks** — MMLU, GSM8K, HumanEval, MBPP, MT-Bench, FinQA, ConvFinQA
-- ✅ **GPT-as-Judge** — automated quality scoring with OpenAI models
-- ✅ **Custom fintech eval** — regulatory, risk, trading, fraud, portfolio prompts
-- ✅ **Embedding models** — fine-tune BGE/E5 for fintech RAG
-- ✅ **Multiple export formats** — LoRA adapter, merged 16-bit, GGUF (for Ollama)
-- ✅ **Streamlit Web UI** — interactive dashboard for the entire pipeline
-- ✅ **Jupyter notebook** — interactive step-by-step walkthrough
-- ✅ **GPU monitoring** — real-time VRAM tracking during training
+-  **8 candidate models** pre-configured (1.5B → 14B) — pick what fits your GPU
+-  **QLoRA/LoRA + Unsloth** — 2x faster training, fits 30GB VRAM
+-  **Reasoning fine-tuning** — `<think/>` tags, CoT scaffolding, self-reflection prompts
+-  **7 benchmarks** — MMLU, GSM8K, HumanEval, MBPP, MT-Bench, FinQA, ConvFinQA
+-  **GPT-as-Judge** — automated quality scoring with OpenAI models
+-  **Custom fintech eval** — regulatory, risk, trading, fraud, portfolio prompts
+-  **Embedding models** — fine-tune BGE/E5 for fintech RAG
+-  **Multiple export formats** — LoRA adapter, merged 16-bit, GGUF (for Ollama)
+-  **Streamlit Web UI** — interactive dashboard for the entire pipeline
+-  **Jupyter notebook** — interactive step-by-step walkthrough
+-  **GPU monitoring** — real-time VRAM tracking during training
 
 ---
 
-## 🏆 Model Recommendations (30GB VRAM)
+##  Model Recommendations (30GB VRAM)
 
-| Priority | 🥇 Top Pick | 🥈 Alternative | Why |
+| Priority |  Top Pick |  Alternative | Why |
 |----------|------------|----------------|-----|
 | **Reasoning & Thinking** | DeepSeek-R1-Distill-Qwen-7B | Qwen2.5-Coder-7B | Built-in CoT + self-reflection + `<think/>` blocks |
 | **Coding** | Qwen2.5-Coder-7B-Instruct | DeepSeek-Coder-V2-Lite | Best 7B coding benchmarks, 128K context |
@@ -49,7 +49,7 @@ Plus an **embedding model pipeline** for RAG and semantic search in the fintech 
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ```
 llm-finetune-pipeline/
@@ -92,7 +92,7 @@ llm-finetune-pipeline/
 
 ---
 
-## ⚡ Quick Start
+##  Quick Start
 
 ### Prerequisites
 
@@ -126,12 +126,12 @@ streamlit run app.py
 ```
 
 Open your browser to `http://localhost:8501` — you'll get an interactive dashboard with:
-- 📊 Data upload and validation
-- 🤖 Model selection with VRAM check
-- 🔥 Fine-tuning configuration
-- 📏 Benchmark evaluation setup
-- ⚖️ Model comparison and recommendations
-- 📤 Export and deployment guides
+-  Data upload and validation
+-  Model selection with VRAM check
+-  Fine-tuning configuration
+-  Benchmark evaluation setup
+-  Model comparison and recommendations
+-  Export and deployment guides
 
 ### Option B: Interactive Notebook
 
@@ -178,7 +178,7 @@ python run_pipeline.py --interactive
 
 ---
 
-## 📊 Dataset Preparation
+##  Dataset Preparation
 
 ### CSV Format
 
@@ -212,7 +212,7 @@ python data/prepare_dataset.py \
 
 ---
 
-## 🔥 Fine-Tuning
+##  Fine-Tuning
 
 ### Model Selection
 
@@ -275,7 +275,7 @@ python training/merge_adapter.py \
 
 ---
 
-## 📏 Evaluation
+##  Evaluation
 
 ### Benchmark Suite
 
@@ -317,16 +317,16 @@ python evaluation/evaluate.py --model ./outputs/deepseek-r1-qwen-7b --benchmarks
 
 The pipeline includes 24 custom fintech prompts across 6 categories:
 
-- 🏛️ **Regulatory Compliance** — PSD2, SOX, AML/KYC, Dodd-Frank
-- ⚠️ **Risk Assessment** — credit risk, fraud, market risk, operational risk
-- 📈 **Financial Analysis** — Sharpe ratio, DCF, WACC, current ratio
-- 📊 **Algorithmic Trading** — MA crossover, Bollinger Bands, VWAP, momentum
-- 🔍 **Fraud Detection** — feature engineering, isolation forest, graph-based
-- 💼 **Portfolio Optimization** — Markowitz, CAPM, risk parity, Black-Litterman
+-  **Regulatory Compliance** — PSD2, SOX, AML/KYC, Dodd-Frank
+-  **Risk Assessment** — credit risk, fraud, market risk, operational risk
+-  **Financial Analysis** — Sharpe ratio, DCF, WACC, current ratio
+-  **Algorithmic Trading** — MA crossover, Bollinger Bands, VWAP, momentum
+-  **Fraud Detection** — feature engineering, isolation forest, graph-based
+-  **Portfolio Optimization** — Markowitz, CAPM, risk parity, Black-Litterman
 
 ---
 
-## 🔍 Embedding Models
+##  Embedding Models
 
 Fine-tune and evaluate embedding models for fintech RAG and semantic search:
 
@@ -343,31 +343,31 @@ python evaluation/embedding_pipeline.py --compare --models bge-large e5-large mi
 
 | Model | Dimension | Max Length | VRAM | Best For |
 |-------|-----------|------------|------|----------|
-| **bge-large** | 1024 | 512 | ~2 GB | 🏆 Semantic search, RAG |
+| **bge-large** | 1024 | 512 | ~2 GB |  Semantic search, RAG |
 | e5-large | 1024 | 512 | ~2 GB | Text similarity |
 | bge-m3 | 1024 | 8192 | ~3 GB | Long documents |
 | minilm | 384 | 256 | ~0.5 GB | Fast prototyping |
 
 ---
 
-## 🖥️ VRAM Reference
+##  VRAM Reference
 
 | Model | Size | Base (4-bit) | QLoRA Training | Fit 30GB? | Risk |
 |-------|------|-------------|----------------|-----------|------|
-| qwen2.5-coder-1.5b | 1.5B | ~1.2 GB | 6-8 GB | ✅ Comfortable | None |
-| phi-2 | 2.7B | ~2.0 GB | 8-10 GB | ✅ Comfortable | None |
-| qwen2.5-coder-7b | 7B | ~4.5 GB | 16-18 GB | ✅ Good margin | Low |
-| llama-3.1-8b | 8B | ~5.0 GB | 18-20 GB | ✅ QLoRA only | Low |
-| deepseek-coder-7b | 7B | ~4.5 GB | 16-18 GB | ✅ Good margin | Low |
-| deepseek-r1-qwen-7b | 7B | ~4.5 GB | 16-20 GB | ✅ Good margin | Low |
-| mistral-7b | 7B | ~4.5 GB | 16-18 GB | ✅ Good margin | Low |
-| qwen2.5-coder-14b | 14B | ~8.5 GB | 24-28 GB | ⚠️ Tight | **HIGH** |
+| qwen2.5-coder-1.5b | 1.5B | ~1.2 GB | 6-8 GB |  Comfortable | None |
+| phi-2 | 2.7B | ~2.0 GB | 8-10 GB |  Comfortable | None |
+| qwen2.5-coder-7b | 7B | ~4.5 GB | 16-18 GB |  Good margin | Low |
+| llama-3.1-8b | 8B | ~5.0 GB | 18-20 GB |  QLoRA only | Low |
+| deepseek-coder-7b | 7B | ~4.5 GB | 16-18 GB |  Good margin | Low |
+| deepseek-r1-qwen-7b | 7B | ~4.5 GB | 16-20 GB |  Good margin | Low |
+| mistral-7b | 7B | ~4.5 GB | 16-18 GB |  Good margin | Low |
+| qwen2.5-coder-14b | 14B | ~8.5 GB | 24-28 GB |  Tight | **HIGH** |
 
 > **14B Warning**: Requires `batch_size=1`, `lora_rank=32`, `max_seq_length=2048`. Monitor VRAM carefully!
 
 ---
 
-## 🛠️ Troubleshooting
+##  Troubleshooting
 
 ### Out of Memory (OOM)
 
@@ -409,7 +409,7 @@ python data/prepare_dataset.py --input your_data.csv \
 
 ---
 
-## 📋 LoRA Hyperparameter Reference
+##  LoRA Hyperparameter Reference
 
 | Parameter | Default (7B) | Default (14B) | Range | Description |
 |-----------|-------------|---------------|-------|-------------|
@@ -424,7 +424,7 @@ python data/prepare_dataset.py --input your_data.csv \
 
 ---
 
-## 🚀 Deployment Examples
+##  Deployment Examples
 
 ### Ollama (Local Inference)
 
@@ -459,7 +459,7 @@ huggingface-cli upload your-username/fintech-coder ./outputs/deepseek-r1-qwen-7b
 
 ---
 
-## 📄 License
+##  License
 
 This pipeline is released under the MIT License. Individual models have their own licenses — please check before deployment:
 
@@ -474,7 +474,7 @@ This pipeline is released under the MIT License. Individual models have their ow
 
 ---
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - [Unsloth](https://github.com/unslothai/unsloth) — 2x faster LLM fine-tuning
 - [Hugging Face](https://huggingface.co/) — Model hub and transformers library
