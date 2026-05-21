@@ -1,0 +1,51 @@
+# LLM Fine-Tuning Pipeline - Requirements
+# ==========================================
+# Install with: pip install -r requirements.txt
+
+# Core - Unsloth (includes PyTorch, transformers, peft, trl)
+unsloth[colab-new] @ git+https://github.com/unslothai/unsloth.git
+
+# Or install Unsloth via pip:
+# pip install unsloth
+
+# Data processing
+pandas>=2.0.0
+numpy>=1.24.0
+datasets>=2.18.0
+pyarrow>=14.0.0
+
+# Configuration
+pyyaml>=6.0
+omegaconf>=2.3.0
+
+# Evaluation frameworks
+lm-eval>=0.4.2
+evaluate>=0.4.1
+absl-py>=1.4.0
+
+# GPT-as-Judge (optional)
+openai>=1.12.0
+
+# Visualization & Reporting
+matplotlib>=3.7.0
+seaborn>=0.13.0
+
+# Web UI
+streamlit>=1.31.0
+plotly>=5.18.0
+
+# Utilities
+tqdm>=4.66.0
+rich>=13.7.0
+python-dotenv>=1.0.0
+
+# Experiment tracking
+tensorboard>=2.15.0
+wandb>=0.16.0  # Optional: set WANDB_MODE=disabled to skip
+
+# Model export
+accelerate>=0.27.0
+bitsandbytes>=0.42.0
+
+# GGUF export support
+# gguf  # Install if you need GGUF export for llama.cpp/Ollama

@@ -1,0 +1,79 @@
+# ================================================================
+# .gitignore for LLM Fine-Tuning Pipeline
+# ================================================================
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Jupyter
+.ipynb_checkpoints/
+*.ipynb_metadata
+
+# Model outputs (large files)
+outputs/
+*.bin
+*.safetensors
+*.gguf
+*.pt
+*.pth
+
+# Processed data
+data/processed*/
+data/raw/
+
+# Evaluation results
+eval_results/
+*.jsonl
+
+# Logs
+*.log
+pipeline.log
+gpu_monitor.jsonl
+
+# TensorBoard
+runs/
+tensorboard/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# npm (for report generation)
+node_modules/
+package.json
+package-lock.json
+
+# Streamlit
+.streamlit/
+
+# Generated report
+generate_report.js
+create_notebook.py
+
+# Temporary
+tmp/
+temp/
+*.tmp
