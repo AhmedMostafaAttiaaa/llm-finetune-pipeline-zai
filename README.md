@@ -2,7 +2,6 @@
 
 **Fine-tune and evaluate open-source LLMs for Coding & Fintech — with Reasoning & Thinking support**
 
-[![Python 3.10+]](https://www.python.org/downloads/)
 [![CUDA](https://img.shields.io/badge/CUDA-Required-green.svg)](https://developer.nvidia.com/cuda-toolkit)
 [![Unsloth](https://img.shields.io/badge/Unsloth-2x%20Faster-orange.svg)](https://github.com/unslothai/unsloth)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
